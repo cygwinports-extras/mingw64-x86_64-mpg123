@@ -1,0 +1,25 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-mpg123"
+VERSION=1.15.4
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="MPEG audio decoder for Win64 platform"
+DESCRIPTION="mpg123 is a cross-platform, real time MPEG 1.0/2.0/2.5 audio
+player/decoder for layers 1,2 and 3 (MPEG 1.0 layer 3 aka MP3 most
+commonly tested)."
+HOMEPAGE="http://www.mpg123.de/"
+SRC_URI="mirror://sourceforge/mpg123/mpg123-${VERSION}.tar.bz2"
+SRC_DIR="mpg123-${VERSION}"
+
+DIFF_EXCLUDES="libmpg123.sym"
+
+CYGCONF_ARGS="
+	--disable-modules
+	--with-audio=dummy,win32
+	--with-cpu=x86-64
+	--with-default-audio=win32
+	--with-optimization=2
+"
+MAKEOPTS+=" bin_PROGRAMS= dist_man_MANS= "
