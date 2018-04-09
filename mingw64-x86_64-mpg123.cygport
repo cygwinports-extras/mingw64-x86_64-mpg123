@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-mpg123"
-VERSION=1.25.6
+VERSION=1.25.10
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="MPEG audio decoder for Win64 platform"
